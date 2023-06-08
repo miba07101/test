@@ -14,24 +14,24 @@ class AwareDateTime(TypeDecorator):
     Source:
       https://gist.github.com/inklesspen/90b554c864b99340747e
     """
+
     impl = DateTime(timezone=True)
 
     def process_bind_param(self, value, dialect):
         if isinstance(value, datetime.datetime) and value.tzinfo is None:
-            raise ValueError('{!r} must be TZ-aware'.format(value))
+            raise ValueError("{!r} must be TZ-aware".format(value))
         return value
 
     def __repr__(self):
-        return 'AwareDateTime()'
+        return "AwareDateTime()"
 
 
 class ResourceMixin(object):
     # Keep track when records are created and updated.
-    created_on = db.Column(AwareDateTime(),
-                           default=tzware_datetime)
-    updated_on = db.Column(AwareDateTime(),
-                           default=tzware_datetime,
-                           onupdate=tzware_datetime)
+    created_on = db.Column(AwareDateTime(), default=tzware_datetime)
+    updated_on = db.Column(
+        AwareDateTime(), default=tzware_datetime, onupdate=tzware_datetime
+    )
 
     def save(self):
         """
@@ -62,5 +62,5 @@ class ResourceMixin(object):
         obj_id = hex(id(self))
         columns = self.__table__.c.keys()
 
-        values = ', '.join("%s=%r" % (n, getattr(self, n)) for n in columns)
-        return '<%s %s(%s)>' % (obj_id, self.__class__.__name__, values)
+        values = ", ".join("%s=%r" % (n, getattr(self, n)) for n in columns)
+        return "<%s %s(%s)>" % (obj_id, self.__class__.__name__, values)
