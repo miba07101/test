@@ -53,6 +53,7 @@
 # print(utc_datetime)
 
 from datetime import datetime
+import pytz
 
 # Input date-time string
 input_date_string = "10:17:29 Aug 28, 2023 PDT"
@@ -66,3 +67,12 @@ date_object = datetime.strptime(date_str, "%b %d, %Y")
 
 # Print the extracted date
 print("Date:", date_object.date())
+
+
+my_date = datetime.now()
+timezone = "utc"
+my_date_utc = my_date.astimezone(pytz.timezone(timezone)).strftime(
+    "%Y-%m-%d %H:%M:%S%z %Z"
+)
+print(f"My date: {my_date}")
+print(f"My date UTC: {my_date_utc}")

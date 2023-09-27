@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get User Timezone</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Get User Timezone</h1>
+    <p id="timezone-info">Detecting your timezone...</p>
+
+    <script>
+    // Function to get user's timezone and send it to the server
+    function sendUserTimezone() {
+        var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        // Send timezone to the server
+        $.ajax({
+            type: 'POST',
+            url: '/set_timezone',
+            contentType: 'application/json',
+            data: JSON.stringify({ timezone: timezone }),
+            success: function () {
+                $('#timezone-info').text('Your timezone: ' + timezone);
+            },
+            error: function () {
+                $('#timezone-info').text('Error getting timezone.');
+            }
+        });
+    }
+
+    // Call the function when the page loads
+    $(document).ready(function () {
+        sendUserTimezone();
+    });
+    </script>
+</body>
+</html>
+

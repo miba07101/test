@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get User Timezone</title>
+</head>
+<body>
+    <h1>Get User Timezone</h1>
+    <p id="timezone-info">Detecting your timezone...</p>
+
+<script>
+// Function to get user's timezone and send it to the server
+function sendUserTimezone() {
+    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    // Send timezone to the server using the Fetch API
+    fetch('/set_timezone', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ timezone: timezone })
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('timezone-info').textContent = 'Your timezone: ' + timezone;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('timezone-info').textContent = 'Error getting timezone.';
+
+        // Set timezone to "UTC" on error
+        timezone = 'UTC';
+        document.getElementById('timezone-info').textContent = 'Your timezone: ' + timezone;
+    });
+}
+
+// Call the function when the page loads
+window.onload = sendUserTimezone;
+</script>
+</body>
+</html>
+

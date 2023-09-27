@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dependent Select Field</title>
+    <script src="https://unpkg.com/htmx.org@1.6.2/dist/htmx.js"></script>
+</head>
+<body>
+    <h1>Dependent Select Field</h1>
+    <form method="POST" action="/">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <div>
+            {{ form.fruit.label }}
+            {{ form.fruit(id="fruit") | safe }}
+        </div>
+        <div>
+            {{ form.variety.label }}
+            <select id="variety" name="variety" hx-trigger="change" hx-get="/get_varieties" hx-target="#variety">
+                <option value="">Select a variety</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
