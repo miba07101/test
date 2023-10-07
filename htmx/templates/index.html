@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dependent Select Field</title>
-    <script src="https://unpkg.com/htmx.org@1.6.2/dist/htmx.js"></script>
+    <meta charset="UTF-8">
+    <title>htmx hx-swap-oob Example</title>
+    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
 </head>
 <body>
-    <h1>Dependent Select Field</h1>
-    <form method="POST" action="/">
-        {{ form.hidden_tag() }}
-        {{ form.csrf_token }}
-        <div>
-            {{ form.fruit.label }}
-            {{ form.fruit(id="fruit") | safe }}
-        </div>
-        <div>
-            {{ form.variety.label }}
-            <select id="variety" name="variety" hx-trigger="change" hx-get="/get_varieties" hx-target="#variety">
-                <option value="">Select a variety</option>
-            </select>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+    <h1>htmx hx-swap-oob Example</h1>
+    <div id="container">
+        <button hx-get="/load-content" hx-swap-oob="#outside-container">Load Content</button>
+    </div>
+    <div id="outside-container">
+        <!-- This is where the new content will be placed -->
+    </div>
 </body>
 </html>
 
