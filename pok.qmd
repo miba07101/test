@@ -1,0 +1,37 @@
+---
+title: pokus
+lang: sk
+execute:
+  echo: false
+  code-fold: True
+format:
+  html:
+    page-layout: article
+    html-math-method: katex
+    number-sections: True
+    css:
+    include-in-header:
+      - text:
+---
+
+```{python}
+print("hello")
+```
+
+# 3) Python Program to Find the Square Root
+
+```{python}
+# Python Program to calculate the square root
+
+# Note: change this value for a different result
+num = 8
+
+num_sqrt = num ** 0.5
+print('The square root of %0.3f is %0.3f'%(num ,num_sqrt))
+#f-string
+print(f"The square root of {num:.3f} is {num_sqrt:.3f}")
+```
+
+```{python}
+print("ahoj Vierka")
+```
