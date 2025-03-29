@@ -30,7 +30,6 @@ asi         massssssss ssssssssssss
 ddddddddddd ppppppppp  pppppppp
 sfsdfs      sdfsf      fsdfds
 
-![snacks-image.png](images/snacks-image.png)
 ![image](./snacks-image.jpg)
 
 op:oooooooooo
