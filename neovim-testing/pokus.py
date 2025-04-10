@@ -7,8 +7,9 @@
 # print(np.append(arr, arr2))
 
 
-n = int(input("enter number: "))
+# n = int(input("enter number: "))
 
+n = 10
 
 def factorial(n: int):
     if n < 0:
@@ -22,3 +23,16 @@ def factorial(n: int):
 print(factorial(n))
 
 print("hello")
+
+
+# %%
+print("I am the first cell")
+print("I am still the first cell")
+
+# %% anything can follow
+print("I am the second cell")
+print("I am still the second cell")
+print("I am still, still the second cell")
+# %%
+
+print("I am the third cell")
