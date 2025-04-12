@@ -24,6 +24,8 @@ print(factorial(n))
 
 print("hello")
 
+def foo():
+    print("foo")
 
 # %%
 print("I am the first cell")
