@@ -31,10 +31,14 @@ def foo():
 print("I am the first cell")
 print("I am still the first cell")
 
+# %%
+print("I am the first cell")
+print("I am still the first cell")
+
 # %% anything can follow
 print("I am the second cell")
 print("I am still the second cell")
 print("I am still, still the second cell")
-# %%
 
+# %%
 print("I am the third cell")
