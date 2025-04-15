@@ -11,11 +11,15 @@ format:
     number-sections: True
 ---
 
+```{python} 
+b = "ahoj"
+print(b)
+```
+
 ```{python}
 a = "hello"
 print(a)
 ```
-
 01/24/2025
 
 

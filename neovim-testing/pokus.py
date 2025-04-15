@@ -9,6 +9,7 @@
 
 # n = int(input("enter number: "))
 
+# %%
 n = 10
 
 def factorial(n: int):
@@ -22,8 +23,10 @@ def factorial(n: int):
 
 print(factorial(n))
 
+# %%
 print("hello")
 
+# %%
 def foo():
     print("foo")
 
@@ -32,6 +35,7 @@ print("I am the first cell")
 print("I am still the first cell")
 
 # %%
+
 print("I am the first cell")
 print("I am still the first cell")
 
