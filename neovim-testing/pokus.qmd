@@ -48,6 +48,7 @@ fffffffffffffff : eeeee
 ### dobre
 
 ```{python}
+# some text in comment
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
