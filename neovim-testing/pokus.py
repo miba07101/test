@@ -12,6 +12,7 @@
 # %%
 n = 10
 
+
 def factorial(n: int):
     if n < 0:
         raise ValueError("Factorial is not defined for negative numbers")
@@ -25,10 +26,17 @@ print(factorial(n))
 
 # %%
 print("hello")
+ano = 3
+
+
+def fun():
+    print(f"hello {ano}")
+
 
 # %%
 def foo():
     print("foo")
+
 
 # %%
 print("I am the first cell")
