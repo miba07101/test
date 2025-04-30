@@ -33,6 +33,7 @@ def fun():
     print(f"hello {ano}")
 
 
+# hello
 # %%
 def foo():
     print("foo")
@@ -40,6 +41,7 @@ def foo():
 
 # %%
 print("I am the first cell")
+# akos sa mas
 print("I am still the first cell")
 
 # %%
