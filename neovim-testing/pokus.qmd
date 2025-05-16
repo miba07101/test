@@ -11,7 +11,7 @@ format:
     number-sections: True
 ---
 
-```{python} 
+```{python}
 b = "ahoj"
 print(b)
 ```
